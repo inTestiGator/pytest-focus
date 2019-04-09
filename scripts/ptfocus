@@ -1,0 +1,12 @@
+#!/bin/bash
+# First, copy this file into the user's bin if it isn't already there.
+file=(~/.local/bin/ptfocus)
+self=(cat ptfocus)
+if [ -f "$file" ]
+then
+	echo "$file found."
+else
+	echo "$file not found, copying this file into $file."
+	echo $self | tee ~/.local/bin/ptfocus
+fi
+	bash --restricted
