@@ -6,14 +6,14 @@ import pytest
 def pytest_addoption(parser):
     group = parser.getgroup('focus')
     group.addoption(
-        '--script',
-        action='store',
-        dest='dest_script',
+        '--focus',
+        action='store_true',
+        dest='/scripts',
         default='ptfocus',
-        help='Set the script for the fixture "script".'
+        help='focus: type --focus after pytest.'
     )
 
-    parser.addini('HELLO', 'Dummy pytest.ini setting')
+    parser.addini('/test/conftest.py')
 
 
 @pytest.fixture
