@@ -1,0 +1,19 @@
+#!/bin/bash
+# First, copy this file into the user's bin if it isn't already there.
+localusrfile=(~/.local/bin/ptfocus)
+usrfile=(usr/local/bin/ptfocus)
+self=(cat ptfocus)
+if [ -f "$localusrfile" ]
+then
+	# When the file is found, just echo that file is found.
+	echo "$localusrfile found."
+else
+	# If file is not found, echo the contents of this script into a file of
+	# the same name in the local bins for the user.
+	echo "$localusrfile not found, copying this file into $localusrfile."
+	echo $self | tee ~/.local/bin/ptfocus
+	echo "Also copy into $usrfile if possible."
+	echo $self | tee usr/local/bin/ptfocus
+fi
+# After the if-else, enter the restricted terminal
+	bash --restricted
