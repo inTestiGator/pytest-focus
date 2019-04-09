@@ -20,3 +20,9 @@ command listed above is:
 ```
 chmod u+x ptfocus
 ```
+After the script is made executable, it can be executed from the `scripts/`
+directory with the following command:
+
+```
+./ptfocus
+```
