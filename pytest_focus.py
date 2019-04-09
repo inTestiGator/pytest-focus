@@ -6,16 +6,16 @@ import pytest
 def pytest_addoption(parser):
     group = parser.getgroup('focus')
     group.addoption(
-        '--foo',
+        '--script',
         action='store',
-        dest='dest_foo',
-        default='2019',
-        help='Set the value for the fixture "bar".'
+        dest='dest_script',
+        default='ptfocus',
+        help='Set the script for the fixture "script".'
     )
 
     parser.addini('HELLO', 'Dummy pytest.ini setting')
 
 
 @pytest.fixture
-def bar(request):
-    return request.config.option.dest_foo
+def script(request):
+    return request.config.option.dest_script

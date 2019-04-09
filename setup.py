@@ -14,7 +14,7 @@ def read(fname):
 setup(
     name='pytest-focus',
     version='0.1.0',
-    author='Matthew Baldeosingh',
+    author='Matthew Baldeosingh, et al.',
     author_email='baldeosinghm@allegheny.edu',
     maintainer='Matthew Baldeosingh',
     maintainer_email='baldeosinghm@allegheny.edu',
