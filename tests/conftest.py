@@ -1,4 +1,7 @@
-pytest_plugins = 'pytester'
+"""Configuration file for the test suite"""
+import os
+import sys
+
 MYPATH = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, MYPATH + "/../")
 # pytest_plugins = 'pytester'
