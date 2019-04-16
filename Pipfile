@@ -7,6 +7,10 @@ verify_ssl = true
 
 [packages]
 pytest-sugar = "*"
+pytest = "*"
+black = "*"
+flake8 = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.6"
