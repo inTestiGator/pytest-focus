@@ -3,8 +3,8 @@
 
 import pytest
 
-
 def pytest_addoption(parser):
+    """ Sets up framework for pytest plug-in """
     group = parser.getgroup('focus')
     group.addoption(
         '--foo',
@@ -19,4 +19,5 @@ def pytest_addoption(parser):
 
 @pytest.fixture
 def bar(request):
+    """ Does nothing """
     return request.config.option.dest_foo
