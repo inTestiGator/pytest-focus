@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+""" Creates environment that promotes focused work through various restrictions """
 
 import pytest
 
