@@ -7,6 +7,7 @@ from setuptools import setup
 
 
 def read(fname):
+    """ Sets up framework for pytest plug-in """
     file_path = os.path.join(os.path.dirname(__file__), fname)
     return codecs.open(file_path, encoding='utf-8').read()
 
