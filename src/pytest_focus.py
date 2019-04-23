@@ -27,9 +27,9 @@ def pytest_addoption(parser):
     group.addoption(
         '--focus',
         action='store_true',
-        help='focus: type --focus after pytest.',
+        # help='focus: type --focus after pytest.',
         dest='focus',
-        default='False'
+        default='False',
         help=(
             'Sends push notifications as tests fails and creates '
             'todo list'
@@ -41,8 +41,8 @@ def pytest_test():
     if pytest.config.getoption('focus'):
         from sys import platform
         if platform == "linux" or platform == "linux2":
-            print("WOOHOOO!")# linux
+            return "WOOOOOO"# linux
         elif platform == "darwin":
-            # OS X
+            pass# OS X
         elif platform == "win32":
-            # Windows...
+            pass# Windows...

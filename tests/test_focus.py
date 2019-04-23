@@ -2,5 +2,5 @@
 from pytest_focus import pytest_test
 
 def test_something():
-    tset = pytest_test()
-    assert tset == "BLAAAAH"
+    test = pytest_test()
+    assert test == "WOOOOOO"
