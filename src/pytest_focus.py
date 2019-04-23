@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-
+import subprocess
 
 # def pytest_addoption(parser):
 #     group = parser.getgroup('pytest.focus')
@@ -41,7 +41,8 @@ def pytest_test():
     if pytest.config.getoption('focus'):
         from sys import platform
         if platform == "linux" or platform == "linux2":
-            return "WOOOOOO"# linux
+            print("WOOOOOO")# linux
+            subprocess.call("scripts/linux.sh", shell=True)
         elif platform == "darwin":
             pass# OS X
         elif platform == "win32":
