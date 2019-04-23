@@ -41,7 +41,7 @@ def pytest_test():
     if pytest.config.getoption('focus'):
         from sys import platform
         if platform == "linux" or platform == "linux2":
-            print("WOOOOOO")# linux
+            return "WOOOOOO!"# linux
             subprocess.call("scripts/linux.sh", shell=True)
         elif platform == "darwin":
             pass# OS X
