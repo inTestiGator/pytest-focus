@@ -13,3 +13,5 @@ def pytest_addoption(parser):
         action='store_true',
         help='focus: type --focus after pytest.'
     )
+
+pytest_plugins = 'pytester'
