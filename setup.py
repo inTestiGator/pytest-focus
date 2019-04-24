@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+"""
+Set up framework for plugin
+"""
 
 import os
 import codecs
