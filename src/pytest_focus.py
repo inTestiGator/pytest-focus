@@ -26,6 +26,9 @@ import pytest
 
 def pytest_addoption(parser):
     group = parser.getgroup('focus')
+    """
+    add option to find the --focus in the arguments
+    """
     group.addoption(
         '--focus',
         action='store_true',
