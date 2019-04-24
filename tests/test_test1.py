@@ -15,6 +15,9 @@ def test_iequals1():
 
 
 def test_iequals2():
+    """
+    practice test case 2 for testing plugin
+    """
     i = iequals2()
     assert i == 2
 
