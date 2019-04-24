@@ -39,16 +39,18 @@ def pytest_addoption(parser):
         help=("Sends push notifications as tests fails and creates " "todo list"),
     )
 
+
 def pytest_test():
-    if pytest.config.getoption('focus'):
     """
     the plug-in for pytest
     """
+    if pytest.config.getoption("focus"):
         from sys import platform
+
         if platform == "linux" or platform == "linux2":
-            return "WOOOOOO!"# linux
+            return "WOOOOOO!"  # linux
             subprocess.call("scripts/linux.sh", shell=True)
         elif platform == "darwin":
-            pass# OS X
+            return "Mac"  # OS X
         elif platform == "win32":
-            pass# Windows...
+            return "windows"  # Windows...
