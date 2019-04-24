@@ -36,7 +36,6 @@ def pytest_addoption(parser):
         )
     )
 
-
 def pytest_test():
     if pytest.config.getoption('focus'):
         from sys import platform
