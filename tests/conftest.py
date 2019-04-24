@@ -3,7 +3,7 @@ import os
 import sys
 
 GO_BACK_A_DIRECTORY = "/../"
-GO_INTO_SRC_DIRECTORY = "test_focus"
+GO_INTO_SRC_DIRECTORY = "src"
 # pytest_plugins = 'pytester'
 
 # set the system path to contain the previous directory
