@@ -7,6 +7,9 @@ from test1 import fail_test
 
 
 def test_iequals1():
+    """
+    practice test case 1 for testing plugin
+    """
     i = iequals1()
     assert i == 1
 
