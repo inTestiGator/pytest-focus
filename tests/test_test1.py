@@ -23,5 +23,8 @@ def test_iequals2():
 
 
 def test_fail_test():
+    """
+    practice test case 2 for testing plugin
+    """
     i = fail_test()
     assert i == 0
