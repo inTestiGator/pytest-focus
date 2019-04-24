@@ -24,11 +24,12 @@ import pytest
 #         return "You are going to be focused."
 #     #return request.config.option.dest_script
 
+
 def pytest_addoption(parser):
-    group = parser.getgroup('focus')
     """
     add option to find the --focus in the arguments
     """
+    group = parser.getgroup("focus")
     group.addoption(
         '--focus',
         action='store_true',
