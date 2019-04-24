@@ -1,4 +1,9 @@
-from test1 import *
+"""
+practice test cases for testing plugin
+"""
+from test1 import iequals1
+from test1 import iequals2
+from test1 import fail_test
 
 
 def test_iequals1():
