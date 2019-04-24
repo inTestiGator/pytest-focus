@@ -34,12 +34,9 @@ def pytest_addoption(parser):
         "--focus",
         action="store_true",
         # help='focus: type --focus after pytest.',
-        dest='focus',
-        default='False',
-        help=(
-            'Sends push notifications as tests fails and creates '
-            'todo list'
-        )
+        dest="focus",
+        default="False",
+        help=("Sends push notifications as tests fails and creates " "todo list"),
     )
 
 def pytest_test():
