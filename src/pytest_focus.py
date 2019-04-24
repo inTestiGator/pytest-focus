@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
-
-import pytest
 """
 Plug in for pytest that sends push notifications for failed tests
 """
 import subprocess
+import pytest
 
 # def pytest_addoption(parser):
 #     group = parser.getgroup('pytest.focus')
