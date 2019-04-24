@@ -41,6 +41,9 @@ def pytest_addoption(parser):
 
 def pytest_test():
     if pytest.config.getoption('focus'):
+    """
+    the plug-in for pytest
+    """
         from sys import platform
         if platform == "linux" or platform == "linux2":
             return "WOOOOOO!"# linux
