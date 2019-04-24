@@ -31,8 +31,8 @@ def pytest_addoption(parser):
     """
     group = parser.getgroup("focus")
     group.addoption(
-        '--focus',
-        action='store_true',
+        "--focus",
+        action="store_true",
         # help='focus: type --focus after pytest.',
         dest='focus',
         default='False',
