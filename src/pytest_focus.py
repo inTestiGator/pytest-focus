@@ -7,17 +7,17 @@ import pytest
 
 
 def pytest_addoption(parser):
-    """
-    add option to find the --focus in the arguments
-    """
-    group = parser.getgroup("focus")
+    group = parser.getgroup('focus')
     group.addoption(
         '--focus',
-        action="store_true",
+        action='store_true',
         # help='focus: type --focus after pytest.',
-        dest="focus",
-        default="False",
-        help=("Sends push notifications as tests fails and creates todo list"),
+        dest='focus',
+        default='False',
+        help=(
+            'Sends push notifications as tests fails and creates '
+            'todo list'
+        )
     )
 
 

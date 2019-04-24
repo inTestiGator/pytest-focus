@@ -10,4 +10,12 @@ GO_INTO_SRC_DIRECTORY = "src"
 PREVIOUS_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PREVIOUS_DIRECTORY + GO_BACK_A_DIRECTORY + GO_INTO_SRC_DIRECTORY)
 
-pytest_plugins = "pytester"
+def pytest_addoption(parser):
+    group = parser.getgroup('focus')
+    group.addoption(
+        '--focus',
+        action='store_true',
+        help='focus: type --focus after pytest.'
+    )
+
+pytest_plugins = 'pytester'
