@@ -10,6 +10,9 @@ from setuptools import setup
 
 
 def read(fname):
+    """
+    Read the filepath to run the code
+    """
     file_path = os.path.join(os.path.dirname(__file__), fname)
     return codecs.open(file_path, encoding='utf-8').read()
 
