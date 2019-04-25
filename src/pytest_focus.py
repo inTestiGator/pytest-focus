@@ -6,23 +6,6 @@ import subprocess
 import pytest
 from sys import platform
 
-
-def pytest_addoption(parser):
-    """pytest addoption parser for reading --focus flag."""
-    group = parser.getgroup('focus')
-    group.addoption(
-        '--focus',
-        action='store_true',
-        # help='focus: type --focus after pytest.',
-        dest='focus',
-        default='False',
-        help=(
-            'Sends push notifications as tests fails and creates '
-            'todo list'
-        )
-    )
-
-
 def pytest_test():
     """
     the plug-in for pytest

@@ -15,8 +15,24 @@ def pytest_addoption(parser):
     """Parser adoption to allow plugin to be run with --focus flag."""
     group = parser.getgroup("focus")
     group.addoption(
+<<<<<<< HEAD
         "--focus", action="store_true", help="focus: type --focus after pytest."
     )
 
 
 PYTEST_PLUGINS = "pytester"
+=======
+        '--focus',
+        action='store_true',
+        # help='focus: type --focus after pytest.',
+        dest='focus',
+        default='False',
+        help=(
+            'Sends push notifications as tests fails and creates '
+            'todo list'
+        )
+    )
+
+
+pytest_plugins = 'pytester'
+>>>>>>> 448316baed35c81c7828e33a270d0201b32abd45
