@@ -15,7 +15,14 @@ def pytest_addoption(parser):
     group.addoption(
         '--focus',
         action='store_true',
-        help='focus: type --focus after pytest.'
+        # help='focus: type --focus after pytest.',
+        dest='focus',
+        default='False',
+        help=(
+            'Sends push notifications as tests fails and creates '
+            'todo list'
+        )
     )
+
 
 pytest_plugins = 'pytester'
