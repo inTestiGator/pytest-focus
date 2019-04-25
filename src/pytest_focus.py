@@ -4,9 +4,11 @@ Plug in for pytest that sends push notifications for failed tests
 """
 import subprocess
 import pytest
+from sys import platform
 
 
 def pytest_addoption(parser):
+    """pytest addoption parser for reading --focus flag."""
     group = parser.getgroup('focus')
     group.addoption(
         '--focus',
@@ -25,12 +27,12 @@ def pytest_test():
     """
     the plug-in for pytest
     """
-    if pytest.config.getoption("focus"):
-        from sys import platform
-        if platform == "linux" or platform == "linux2":
-            print "WOOOOOO!"  # linux
-            subprocess.call("src/scripts/linux.sh", shell=True)
-        elif platform == "darwin":
-            return "Mac"  # OS X
-        elif platform == "win32":
-            return "windows"  # Windows...
+    if platform in ('linux', 'linux2'):
+        subprocess.call("src/scripts/linux.sh", shell=True)
+        return "linux"  # linux
+    elif platform == "darwin":
+        return "Mac"  # OS X
+    elif platform == "win32":
+        return "windows"  # Windows...
+    else:
+        return "unknown"
