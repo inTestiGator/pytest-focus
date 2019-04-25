@@ -12,7 +12,7 @@ def pytest_test():
     """
     os_name = "unknown"
 
-    if platform in ('linux', 'linux2'):
+    if platform in ("linux", "linux2"):
         os_name = "linux"  # linux
     elif platform == "darwin":
         os_name = "Mac"  # OS X
