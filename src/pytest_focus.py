@@ -1,21 +1,22 @@
 # -*- coding: utf-8 -*-
+"""
+Plug in for pytest that sends push notifications for failed tests
+"""
 
-import pytest
-
-
-def pytest_addoption(parser):
-    group = parser.getgroup('focus')
-    group.addoption(
-        '--foo',
-        action='store',
-        dest='dest_foo',
-        default='2019',
-        help='Set the value for the fixture "bar".'
-    )
-
-    parser.addini('HELLO', 'Dummy pytest.ini setting')
+from sys import platform
 
 
-@pytest.fixture
-def bar(request):
-    return request.config.option.dest_foo
+def pytest_test():
+    """
+    the plug-in for pytest
+    """
+    os_name = "unknown"
+
+    if platform in ("linux", "linux2"):
+        os_name = "linux"  # linux
+    elif platform == "darwin":
+        os_name = "Mac"  # OS X
+    elif platform == "win32":
+        os_name = "windows"  # Windows...
+
+    return os_name
