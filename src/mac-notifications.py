@@ -1,13 +1,14 @@
-import pync
-from pync import Notifier
+import os
+# import pync as pync
 
 
-pync.notify('Hello World')
-pync.notify('Hello World', title='Python')
-pync.notify('Hello World', group=os.getpid())
-pync.notify('Hello World', activate='com.apple.Safari')
-pync.notify('Hello World', open='http://github.com/')
-pync.notify('Hello World', execute='say "OMG"')
+# Will need to install pync
+# The notifier function
+def notify(title, subtitle, message):
+    t = '-title {!r}'.format(title)
+    s = '-subtitle {!r}'.format(subtitle)
+    m = '-message {!r}'.format(message)
+    os.system('terminal-notifier {}'.format(' '.join([m, t, s])))
 
 pync.remove_notifications(os.getpid())
 
