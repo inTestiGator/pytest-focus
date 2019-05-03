@@ -1,0 +1,26 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "baldeosinghm",
+      "name": "Matthew Baldeosingh",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/42876742?v=4",
+      "profile": "https://github.com/baldeosinghm",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "review"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "pytest-focus",
+  "projectOwner": "inTestiGator",
+  "repoType": "github",
+  "repoHost": "https://github.com"
+}
