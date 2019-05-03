@@ -10,6 +10,7 @@ from _pytest.terminal import TerminalReporter
 
 
 def pytest_addoption(parser):
+    """ Sets up plugin option """
     group = parser.getgroup("terminal reporting", "reporting", after="general")
     group._addoption(
         "--instafail",
@@ -24,6 +25,7 @@ def pytest_addoption(parser):
 
 @pytest.mark.trylast
 def pytest_configure(config):
+    """ Coniguration for terminal reporter """
     if hasattr(config, "slaveinput"):
         return
     if config.option.instafail and config.pluginmanager.hasplugin("terminalreporter"):
@@ -38,6 +40,7 @@ class InstafailingTerminalReporter(TerminalReporter):
     """ Reports failing test cases as they fail """
 
     def __init__(self, reporter):
+        """ Initilize """
         TerminalReporter.__init__(self, reporter.config)
         self._tw = reporter._tw
 
