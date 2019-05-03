@@ -46,6 +46,26 @@ class focusingTerminalReporter(TerminalReporter):
         self._tw = reporter._tw
 
 
+    def print_failure(self, report):
+        if self.config.option.tbstyle != "no":
+            if self.config.option.tbstyle == "line":
+                line = self._getcrashline(report)
+                self.write_line(line)
+            else:
+                msg = self._getfailureheadline(report)
+                # "when" was unset before pytest 4.2 for collection errors.
+                when = getattr(report, "when", "collect")
+                if when == "collect":
+                    msg = "ERROR collecting " + msg
+                elif when == "setup":
+                    msg = "ERROR at setup of " + msg
+                elif when == "teardown":
+                    msg = "ERROR at teardown of " + msg
+                self.write_sep("_", msg)
+                if not self.config.getvalue("usepdb"):
+                    self._outrep_summary(report)
+
+
 def pytest_test():
     """
     the plug-in for pytest
