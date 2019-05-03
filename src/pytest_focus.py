@@ -19,6 +19,18 @@ def pytest_addoption(parser):
     )
 
 
+@pytest.mark.trylast
+def pytest_configure(config):
+    if hasattr(config, 'slaveinput'):
+        return
+    if config.option.instafail and config.pluginmanager.hasplugin('terminalreporter'):
+        standard_reporter = config.pluginmanager.getplugin('terminalreporter')
+        instafail_reporter = InstafailingTerminalReporter(standard_reporter)
+
+        config.pluginmanager.unregister(standard_reporter)
+        config.pluginmanager.register(instafail_reporter, 'terminalreporter')
+
+
 def pytest_test():
     """
     the plug-in for pytest
