@@ -62,6 +62,11 @@ class focusingTerminalReporter(TerminalReporter):
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
+
+
+    def summary_failures(self):
+        """ Prevent failure summary """
+        pass
 def pytest_test():
     """
     the plug-in for pytest
