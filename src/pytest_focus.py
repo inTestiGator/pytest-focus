@@ -4,6 +4,17 @@ Plug in for pytest that sends push notifications for failed tests
 """
 
 from sys import platform
+from _pytest.terminal import TerminalReporter
+
+def pytest_addoption(parser):
+    group = parser.getgroup("terminal reporting", "reporting", after="general")
+    group._addoption(
+        '--instafail', action="store_true", dest="instafail", default=False,
+        help=(
+            "show failures and errors instantly as they occur (disabled by "
+            "default)."
+        )
+    )
 
 
 def pytest_test():
