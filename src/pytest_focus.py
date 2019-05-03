@@ -67,6 +67,14 @@ class focusingTerminalReporter(TerminalReporter):
     def summary_failures(self):
         """ Prevent failure summary """
         pass
+
+
+    def summary_errors(self):
+        """ Prevent error summary """
+
+        pass
+
+
 def pytest_test():
     """
     the plug-in for pytest
