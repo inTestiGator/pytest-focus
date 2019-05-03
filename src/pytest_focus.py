@@ -41,6 +41,7 @@ class InstafailingTerminalReporter(TerminalReporter):
 
     def __init__(self, reporter):
         """ Initilize """
+        # pylint: disable=protected-access
         TerminalReporter.__init__(self, reporter.config)
         self._tw = reporter._tw
 
