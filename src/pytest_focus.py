@@ -8,27 +8,30 @@ import os.subprocess
 from sys import platform
 from _pytest.terminal import TerminalReporter
 
+
 def pytest_addoption(parser):
     group = parser.getgroup("terminal reporting", "reporting", after="general")
     group._addoption(
-        '--instafail', action="store_true", dest="instafail", default=False,
+        "--instafail",
+        action="store_true",
+        dest="instafail",
+        default=False,
         help=(
-            "show failures and errors instantly as they occur (disabled by "
-            "default)."
-        )
+            "show failures and errors instantly as they occur (disabled by " "default)."
+        ),
     )
 
 
 @pytest.mark.trylast
 def pytest_configure(config):
-    if hasattr(config, 'slaveinput'):
+    if hasattr(config, "slaveinput"):
         return
-    if config.option.instafail and config.pluginmanager.hasplugin('terminalreporter'):
-        standard_reporter = config.pluginmanager.getplugin('terminalreporter')
+    if config.option.instafail and config.pluginmanager.hasplugin("terminalreporter"):
+        standard_reporter = config.pluginmanager.getplugin("terminalreporter")
         instafail_reporter = InstafailingTerminalReporter(standard_reporter)
 
         config.pluginmanager.unregister(standard_reporter)
-        config.pluginmanager.register(instafail_reporter, 'terminalreporter')
+        config.pluginmanager.register(instafail_reporter, "terminalreporter")
 
 
 class InstafailingTerminalReporter(TerminalReporter):
@@ -36,7 +39,7 @@ class InstafailingTerminalReporter(TerminalReporter):
         TerminalReporter.__init__(self, reporter.config)
         self._tw = reporter._tw
 
-        
+
 def pytest_test():
     """
     the plug-in for pytest
