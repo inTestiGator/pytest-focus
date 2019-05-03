@@ -13,9 +13,9 @@ def pytest_addoption(parser):
     # pylint: disable=protected-access
     group = parser.getgroup("terminal reporting", "reporting", after="general")
     group._addoption(
-        "--instafail",
+        "--focus",
         action="store_true",
-        dest="instafail",
+        dest="focus",
         default=False,
         help=(
             "show failures and errors instantly as they occur (disabled by " "default)."
@@ -28,15 +28,15 @@ def pytest_configure(config):
     """ Coniguration for terminal reporter """
     if hasattr(config, "slaveinput"):
         return
-    if config.option.instafail and config.pluginmanager.hasplugin("terminalreporter"):
+    if config.option.focus and config.pluginmanager.hasplugin("terminalreporter"):
         standard_reporter = config.pluginmanager.getplugin("terminalreporter")
-        instafail_reporter = InstafailingTerminalReporter(standard_reporter)
+        focus_reporter = focusingTerminalReporter(standard_reporter)
 
         config.pluginmanager.unregister(standard_reporter)
-        config.pluginmanager.register(instafail_reporter, "terminalreporter")
+        config.pluginmanager.register(focus_reporter, "terminalreporter")
 
 
-class InstafailingTerminalReporter(TerminalReporter):
+class focusingTerminalReporter(TerminalReporter):
     """ Reports failing test cases as they fail """
 
     def __init__(self, reporter):
