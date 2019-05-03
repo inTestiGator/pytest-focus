@@ -12,3 +12,21 @@ the test cases in your test suite pass by relaying which ones fail to pass as
 they are run and tested. Notifications will be sent detailing which test case
 failed when it happens. Currently supports Linux, MacOS, and Windows 10
 operating systems.
+
+## Checks
+
+The following checks are made on the project via these commands:
+
+`pipenv run pytest tests --cov-config pytest.cov --cov`
+
+`pipenv run black **/*.py --check`
+
+`pipenv run flake8 **/*.py`
+
+`pipenv run pylint **/*.py`
+
+`mdl README.md`
+
+Failure for these commands to pass will result in the build failing to pass
+`Travis CI`. Any build that does not pass this system will not be merged into
+the `master` branch.
