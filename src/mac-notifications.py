@@ -1,9 +1,11 @@
+""" Module designed to push notifications to mac screen """
 import os
 import sys
 
 
 # The notifier function
 def notify(title, subtitle, message):
+    """ Send a notification to the user's screen """
     t = "-title {!r}".format(title)
     s = "-subtitle {!r}".format(subtitle)
     m = "-message {!r}".format(message)
