@@ -72,7 +72,6 @@ class focusingTerminalReporter(TerminalReporter):
                 self.write_line(line)
             else:
                 msg = self._getfailureheadline(report)
-                # "when" was unset before pytest 4.2 for collection errors.
                 when = getattr(report, "when", "collect")
                 if when == "collect":
                     msg = "ERROR collecting " + msg
