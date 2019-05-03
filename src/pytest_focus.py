@@ -3,7 +3,6 @@
 Plug in for pytest that sends push notifications for failed tests
 """
 
-import os.subprocess
 
 from sys import platform
 from _pytest.terminal import TerminalReporter
