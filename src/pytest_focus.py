@@ -10,6 +10,7 @@ from _pytest.terminal import TerminalReporter
 
 def pytest_addoption(parser):
     """ Sets up plugin option """
+    # pylint: disable=protected-access
     group = parser.getgroup("terminal reporting", "reporting", after="general")
     group._addoption(
         "--instafail",
@@ -25,7 +26,6 @@ def pytest_addoption(parser):
 @pytest.mark.trylast
 def pytest_configure(config):
     """ Coniguration for terminal reporter """
-    # pylint: disable=protected-access
     if hasattr(config, "slaveinput"):
         return
     if config.option.instafail and config.pluginmanager.hasplugin("terminalreporter"):
