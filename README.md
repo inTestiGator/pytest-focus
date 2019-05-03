@@ -1,5 +1,7 @@
 # pytest-focus
 
+![pytest-focus](static/focus-logo.png "pytest-focus logo")
+
 [![Build Status](https://api.travis-ci.com/inTestiGator/pytest-focus.svg?branch=master)](https://travis-ci.com/inTestiGator/pytest-focus)
 [![codecov.io](http://codecov.io/github/inTestiGator/pytest-focus/coverage.svg?branch=master)](http://codecov.io/github/inTestiGator/pytest-focus?branch=master)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-orange.svg)](https://www.python.org/)
