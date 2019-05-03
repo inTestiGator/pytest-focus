@@ -45,7 +45,6 @@ class focusingTerminalReporter(TerminalReporter):
         TerminalReporter.__init__(self, reporter.config)
         self._tw = reporter._tw
 
-        
     def pytest_collectreport(self, report):
         """ Live errors during test suite run """
         TerminalReporter.pytest_collectreport(self, report)
@@ -54,7 +53,6 @@ class focusingTerminalReporter(TerminalReporter):
                 self.rewrite("")
             # self.print_failure(report)
 
-            
     def pytest_runtest_logreport(self, report):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
@@ -63,7 +61,6 @@ class focusingTerminalReporter(TerminalReporter):
                 self._tw.line()
             # self.print_failure(report)
 
-            
     def print_failure(self, report):
         """ sends push notifications as test cases fail """
         if self.config.option.tbstyle != "no":
@@ -83,8 +80,8 @@ class focusingTerminalReporter(TerminalReporter):
                 self.write_sep("_", msg)
                 if not self.config.getvalue("usepdb"):
                     self._outrep_summary(report)
-                    
-                    
+
+
 def pytest_test():
     """
     the plug-in for pytest
