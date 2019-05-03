@@ -61,6 +61,25 @@ class focusingTerminalReporter(TerminalReporter):
                 self._tw.line()
             # self.print_failure(report)
 
+    def print_failure(self, report):
+        """ sends push notifications as test cases fail """
+        if self.config.option.tbstyle != "no":
+            if self.config.option.tbstyle == "line":
+                line = self._getcrashline(report)
+                self.write_line(line)
+            else:
+                msg = self._getfailureheadline(report)
+                when = getattr(report, "when", "collect")
+                if when == "collect":
+                    msg = "ERROR collecting " + msg
+                elif when == "setup":
+                    msg = "ERROR at setup of " + msg
+                elif when == "teardown":
+                    msg = "ERROR at teardown of " + msg
+                self.write_sep("_", msg)
+                if not self.config.getvalue("usepdb"):
+                    self._outrep_summary(report)
+
 
 def pytest_test():
     """
