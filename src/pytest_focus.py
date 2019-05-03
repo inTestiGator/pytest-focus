@@ -47,6 +47,7 @@ class focusingTerminalReporter(TerminalReporter):
 
 
     def print_failure(self, report):
+        """ sends push notifications as test cases fail """
         if self.config.option.tbstyle != "no":
             if self.config.option.tbstyle == "line":
                 line = self._getcrashline(report)
