@@ -45,7 +45,6 @@ class focusingTerminalReporter(TerminalReporter):
         TerminalReporter.__init__(self, reporter.config)
         self._tw = reporter._tw
 
-
     def print_failure(self, report):
         """ sends push notifications as test cases fail """
         if self.config.option.tbstyle != "no":
