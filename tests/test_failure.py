@@ -1,3 +1,4 @@
+@pytest.mark.XFAIL
 def test_fail():
     a = 2
     assert a == 3
@@ -7,7 +8,7 @@ def test_pass():
     a = 3
     assert a == 3
 
-
+@pytest.mark.XFAIL
 def test_fail1():
     a = 2
     assert a == 3
@@ -47,7 +48,7 @@ def test_pass7():
     a = 3
     assert a == 3
 
-
+@pytest.mark.XFAIL
 def test_fail2():
     a = 2
     assert a == 3

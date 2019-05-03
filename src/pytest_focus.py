@@ -3,6 +3,7 @@
 Plug in for pytest that sends push notifications for failed tests
 """
 
+import pytest
 
 from sys import platform
 from _pytest.terminal import TerminalReporter
@@ -35,6 +36,7 @@ def pytest_configure(config):
 
 class InstafailingTerminalReporter(TerminalReporter):
     """ Reports failing test cases as they fail """
+
     def __init__(self, reporter):
         TerminalReporter.__init__(self, reporter.config)
         self._tw = reporter._tw
