@@ -46,6 +46,13 @@ class focusingTerminalReporter(TerminalReporter):
         self._tw = reporter._tw
 
 
+    def pytest_collectreport(self, report):
+        """ Live errors during test suite run """
+        TerminalReporter.pytest_collectreport(self, report)
+        if report.failed:
+            if self.isatty:
+                self.rewrite('')
+            self.print_failure(report)
 def pytest_test():
     """
     the plug-in for pytest
