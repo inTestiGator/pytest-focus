@@ -1,14 +1,14 @@
 import os
-# import pync as pync
+import sys
 
 
-# Will need to install pync
 # The notifier function
 def notify(title, subtitle, message):
     t = '-title {!r}'.format(title)
     s = '-subtitle {!r}'.format(subtitle)
     m = '-message {!r}'.format(message)
-    os.system('terminal-notifier {}'.format(' '.join([m, t, s])))
+    os.system('terminal-notifier {} -activate "com.apple.Terminal"'.format(' '.join([m, t, s])))
 
 if __name__== "__main__":
-    notify("Error Notification", "python error", "Check your terminal. You have 3 errors!")
+    notify("Failed Test Cases", "uh oh!", "Check your terminal. You have 3 failed test cases!")
+    sys.stdout.write("It appears you have failing test cases...\n")
