@@ -31,6 +31,12 @@ def pytest_configure(config):
         config.pluginmanager.register(instafail_reporter, 'terminalreporter')
 
 
+class InstafailingTerminalReporter(TerminalReporter):
+    def __init__(self, reporter):
+        TerminalReporter.__init__(self, reporter.config)
+        self._tw = reporter._tw
+
+        
 def pytest_test():
     """
     the plug-in for pytest
