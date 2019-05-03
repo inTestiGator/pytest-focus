@@ -18,22 +18,27 @@ operating systems.
 The following checks are made on the project via these commands:
 
 `pipenv run pytest tests --cov-config pytest.cov --cov`
+
   * The command above checks that the pytest test suite works and that the code
     coverage is not lowered when new additions are added
 
 `pipenv run black **/*.py --check`
+
   * The command above checks that all `.py` python code adheres to the black
   code style
 
 `pipenv run flake8 **/*.py`
+
   * The command above checks that all `.py` python code adheres to the standards
     of `flake8`
 
 `pipenv run pylint **/*.py`
-* The command above checks that all `.py` python code adheres to the standards
-  of `pylint` and gets rated "10/10"
+
+  * The command above checks that all `.py` python code adheres to the standards
+    of `pylint` and gets rated "10/10"
 
 `mdl README.md`
+
   * The command above checks that the `README.md` adheres to the markdown
     language and its syntax
 
