@@ -12,16 +12,39 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5522e362cd8486d9df3819918285163)](https://app.codacy.com/app/Alex-Yarkosky/pytest-focus?utm_source=github.com&utm_medium=referral&utm_content=inTestiGator/pytest-focus&utm_campaign=Badge_Grade_Dashboard)
 
 Welcome to pytest-focus, a pytest plugin designed to make you focus as you write
-test cases until they pass. The way that it completes this task, is through the
+test cases until they pass. . This tool aims to help
+you stay on top of making all the test cases in your test suite pass by relaying
+which ones fail to pass as they are run and tested. Currently supports Linux,
+MacOS, and Windows 10 operating systems.
+
+## What is pytest-focus
+The way that pytest-focus completes its task, is through the
 use of push notifications and a creation of a ToDo-list. As test cases fail,
 pytest-focus sends the user notifications in real time about tests that have failed.
 After all the tests have been checked, it creates a ToDo-list for the user to view
-in order to help people focus on immediate problems. This tool aims to help
-you stay on top of making all the test cases in your test suite pass by relaying
-which ones fail to pass as they are run and tested. Notifications will be sent detailing which test case failed when it happens. Currently supports Linux,
-MacOS, and Windows 10 operating systems.
+in order to help people focus on immediate problems.
+Notifications will be sent detailing which test case failed when it happens.
+
+## Windows Users
+
+If you use Windows, you need to run the command:
+
+`pip install win10toast`
+
+This will allow the push notifications to interact with the computers.
+
+## Mac Users
+
+If you use a Mac, you need to run the command:
+
+`brew install terminal-notifier`
+
+Otherwise, if you choose to install via RubyGems, run the command:
+
+`[sudo] gem install terminal-notifier`
 
 ## Setup
+
 You can install this plugin from PYPI  and download dependencies by following
 the following commands:
 
