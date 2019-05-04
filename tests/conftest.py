@@ -4,7 +4,8 @@ import sys
 import pytest
 from _pytest.terminal import TerminalReporter
 from sys import platform
-from win10toast import ToastNotifier
+if platform == "win32":
+    from win10toast import ToastNotifier
 
 
 GO_BACK_A_DIRECTORY = "/../"
@@ -49,7 +50,7 @@ def notify(title, subtitle, message):
     if platform == "darwin":
         mac_notify(title, subtitle, message)
     elif platform in ("linux", "linux2"):
-        print("Failures!")
+        linux_notify(title, message)
     elif platform == "win32":
         win_notify(title, message)
 
