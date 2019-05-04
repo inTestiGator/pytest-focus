@@ -6,6 +6,7 @@ import webbrowser
 import pytest
 from _pytest.terminal import TerminalReporter
 from sys import platform
+
 if platform == "win32":
     from win10toast import ToastNotifier
 
@@ -25,6 +26,7 @@ sys.path.insert(0, PRE_DIRECTORY + GO_BACK_A_DIRECTORY + GO_INTO_SRC_DIRECTORY)
 #     group.addoption(
 #         "--focus", action="store_true", help="focus: type --focus after pytest"
 #     )
+
 
 def mac_notify(title, subtitle, message):
     t = "-title {!r}".format(title)
@@ -46,6 +48,7 @@ def mac_notify(title, subtitle, message):
 def linux_notify(title, message):
     os.system("notify-send {} --urgency=critical".format(" ".join([title, message])))
 
+
 # The notifier function
 def notify(title, message, subtitle="Test Case Failed."):
     """ Send a notification to the user's screen """
@@ -59,7 +62,7 @@ def notify(title, message, subtitle="Test Case Failed."):
 
 def todo_list(test_details):
     """ List of failed test cases in txt file """
-    f= open("failed_tests.txt","w+")
+    f = open("failed_tests.txt", "w+")
     f.write(test_details)
     webbrowser.open("failed_tests.txt")
 
@@ -115,7 +118,9 @@ class focusingTerminalReporter(TerminalReporter):
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
             notify(str(getattr(report, "head_line")), str(getattr(report, "outcome")))
-            test_details = str((str(getattr(report, "head_line")), str(getattr(report, "outcome"))))
+            test_details = str(
+                (str(getattr(report, "head_line")), str(getattr(report, "outcome")))
+            )
             todo_list(test_details)
             if self.verbosity <= 0:
                 self._tw.line()
@@ -139,7 +144,6 @@ class focusingTerminalReporter(TerminalReporter):
                 self.write_sep("_", msg)
                 if not self.config.getvalue("usepdb"):
                     self._outrep_summary(report)
-
 
 
 PYTEST_PLUGINS = "pytester"

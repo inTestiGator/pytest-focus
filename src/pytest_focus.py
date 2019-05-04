@@ -3,11 +3,9 @@
 Plug in for pytest that sends push notifications for failed tests
 """
 
-from sys import platform
 import pytest
-import os
 from _pytest.terminal import TerminalReporter
-from mac-notifications import mac_notify
+
 
 def pytest_addoption(parser):
     """ Sets up plugin option """
@@ -31,13 +29,13 @@ def pytest_configure(config):
         return
     if config.option.focus and config.pluginmanager.hasplugin("terminalreporter"):
         standard_reporter = config.pluginmanager.getplugin("terminalreporter")
-        focus_reporter = focusingTerminalReporter(standard_reporter)
+        focus_reporter = FocusingTerminalReporter(standard_reporter)
 
         config.pluginmanager.unregister(standard_reporter)
         config.pluginmanager.register(focus_reporter, "terminalreporter")
 
 
-class focusingTerminalReporter(TerminalReporter):
+class FocusingTerminalReporter(TerminalReporter):
     """ Reports failing test cases as they fail """
 
     def __init__(self, reporter):
@@ -62,21 +60,8 @@ class focusingTerminalReporter(TerminalReporter):
                 self._tw.line()
             # self.print_failure(report)
 
-
-    def summary_failures(self):
-        # Prevent failure summary from being shown since we already
-        # show the failure instantly after failure has occured.
-        pass
-
-    def summary_errors(self):
-        # Prevent error summary from being shown since we already
-        # show the error instantly after error has occured.
-        pass
-
-
     def print_failure(self, report):
         """ sends push notifications as test cases fail """
-        mac-notifications.mac_notify()
         if self.config.option.tbstyle != "no":
             if self.config.option.tbstyle == "line":
                 line = self._getcrashline(report)
