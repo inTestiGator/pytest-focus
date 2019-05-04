@@ -17,6 +17,7 @@ pytest-cov = "*"
 codacy-coverage = "*"
 
 [packages]
+pytest-instafail = "*"
 
 [requires]
 python_version = "3.6"
