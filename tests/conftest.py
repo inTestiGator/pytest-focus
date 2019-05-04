@@ -5,6 +5,7 @@ from sys import platform
 import webbrowser
 import pytest
 from _pytest.terminal import TerminalReporter
+
 if platform == "win32":
     from win10toast import ToastNotifier
 
