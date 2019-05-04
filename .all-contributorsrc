@@ -30,20 +30,6 @@
       ]
     },
     {
-      "login": "Alex",
-      "name": "Alex Gaynor",
-      "avatar_url": "https://avatars2.githubusercontent.com/u/772?v=4",
-      "profile": "https://alexgaynor.net",
-      "contributions": [
-        "code",
-        "content",
-        "doc",
-        "infra",
-        "review",
-        "design"
-      ]
-    },
-    {
       "login": "ilikerustoo",
       "name": "Mohammad Khan",
       "avatar_url": "https://avatars3.githubusercontent.com/u/25516043?v=4",
@@ -55,6 +41,19 @@
         "review",
         "test",
         "platform"
+     },
+     {
+      "login": "Alex-Yarkosky",
+      "name": "Alexander Yarkosky",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/36210455?v=4",
+      "profile": "http://alexander.yarkosky.xyz",
+      "contributions": [
+        "code",
+        "content",
+        "doc",
+        "infra",
+        "review",
+        "design"
       ]
     }
   ],
