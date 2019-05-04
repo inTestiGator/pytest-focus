@@ -5,7 +5,6 @@ Test cases designed to see if plugin works
 import pytest
 
 
-@pytest.mark.xfail
 def test_fail():
     """ Failing test """
 

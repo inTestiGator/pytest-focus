@@ -5,6 +5,7 @@ Plug in for pytest that sends push notifications for failed tests
 
 from sys import platform
 import pytest
+import os
 from _pytest.terminal import TerminalReporter
 
 
@@ -61,6 +62,18 @@ class focusingTerminalReporter(TerminalReporter):
                 self._tw.line()
             # self.print_failure(report)
 
+
+    def summary_failures(self):
+        # Prevent failure summary from being shown since we already
+        # show the failure instantly after failure has occured.
+        pass
+
+    def summary_errors(self):
+        # Prevent error summary from being shown since we already
+        # show the error instantly after error has occured.
+        pass
+
+
     def print_failure(self, report):
         """ sends push notifications as test cases fail """
         if self.config.option.tbstyle != "no":
@@ -77,21 +90,22 @@ class focusingTerminalReporter(TerminalReporter):
                 elif when == "teardown":
                     msg = "ERROR at teardown of " + msg
                 self.write_sep("_", msg)
+                # subprocess.call("notify-send " + msg)
                 if not self.config.getvalue("usepdb"):
                     self._outrep_summary(report)
 
 
-def pytest_test():
-    """
-    the plug-in for pytest
-    """
-    os_name = "unknown"
-
-    if platform in ("linux", "linux2"):
-        os_name = "linux"  # linux
-    elif platform == "darwin":
-        os_name = "Mac"  # OS X
-    elif platform == "win32":
-        os_name = "windows"  # Windows...
-
-    return os_name
+# def pytest_test():
+#     """
+#     the plug-in for pytest
+#     """
+#     os_name = "unknown"
+#
+#     if platform in ("linux", "linux2"):
+#         os_name = "linux"  # linux
+#     elif platform == "darwin":
+#         os_name = "Mac"  # OS X
+#     elif platform == "win32":
+#         os_name = "windows"  # Windows...
+#
+#     return os_name
