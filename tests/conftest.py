@@ -1,10 +1,6 @@
 """Configuration file for the test suite"""
 import os
 import sys
-from sys import platform
-import webbrowser
-import pytest
-from _pytest.terminal import TerminalReporter
 
 
 GO_BACK_A_DIRECTORY = "/../"
