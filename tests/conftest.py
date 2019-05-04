@@ -7,6 +7,7 @@ import pytest
 from _pytest.terminal import TerminalReporter
 from sys import platform
 
+# pylint: disable=import-error
 if platform == "win32":
     from win10toast import ToastNotifier
 
@@ -29,12 +30,13 @@ sys.path.insert(0, PRE_DIRECTORY + GO_BACK_A_DIRECTORY + GO_INTO_SRC_DIRECTORY)
 
 
 def mac_notify(title, subtitle, message):
-    t = "-title {!r}".format(title)
-    s = "-subtitle {!r}".format(subtitle)
-    m = "-message {!r}".format(message)
+    """ Handles Mac Notification """
+    push_t = "-title {!r}".format(title)
+    push_s = "-subtitle {!r}".format(subtitle)
+    push_m = "-message {!r}".format(message)
     os.system(
         'terminal-notifier {} -activate "com.apple.Terminal"'.format(
-            " ".join([m, t, s])
+            " ".join([push_m, push_t, push_s])
         )
     )
     sys.stdout.write("It appears you have failing test cases...\n")
@@ -46,6 +48,7 @@ def mac_notify(title, subtitle, message):
 
 
 def linux_notify(title, message):
+    """ Handles linux notifications """
     os.system("notify-send {} --urgency=critical".format(" ".join([title, message])))
 
 
@@ -54,10 +57,8 @@ def notify(title, message, subtitle="Test Case Failed."):
     """ Send a notification to the user's screen """
     if platform == "darwin":
         mac_notify(title, subtitle, message)
-    elif platform in ("linux", "linux2"):
+    else platform in ("linux", "linux2"):
         linux_notify(title, message)
-    elif platform == "win32":
-        win_notify(title, message)
 
 
 def todo_list(test_details):
