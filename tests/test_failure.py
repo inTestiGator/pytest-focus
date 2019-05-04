@@ -5,7 +5,7 @@ Test cases designed to see if plugin works
 import pytest
 
 
-# @pytest.mark.xfail
+@pytest.mark.xfail
 def test_fail():
     """ Failing test """
 
@@ -19,7 +19,7 @@ def test_pass():
     assert a == 3
 
 
-# @pytest.mark.xfail
+@pytest.mark.xfail
 def test_fail1():
     """ Failing test """
     a = 2
@@ -68,7 +68,7 @@ def test_pass7():
     assert a == 3
 
 
-# @pytest.mark.xfail
+@pytest.mark.xfail
 def test_fail2():
     """ Failing test """
     a = 2
