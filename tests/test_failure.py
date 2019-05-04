@@ -19,7 +19,7 @@ def test_pass():
     assert a == 3
 
 
-#@pytest.mark.xfail
+@pytest.mark.xfail
 def test_fail1():
     """ Failing test """
     a = 2
