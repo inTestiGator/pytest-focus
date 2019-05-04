@@ -5,10 +5,7 @@ Test cases designed to see if plugin works
 import pytest
 
 
-<<<<<<< HEAD
-=======
-#@pytest.mark.xfail
->>>>>>> mac
+# @pytest.mark.xfail
 def test_fail():
     """ Failing test """
 

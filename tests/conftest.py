@@ -54,6 +54,14 @@ def notify(title, message, subtitle="Test Case Failed."):
     elif platform == "win32":
         win_notify(title, message)
 
+
+def todo_list(test_details):
+    """ List of failed test cases in txt file """
+    f= open("failed_tests.txt","w+")
+    # test_details = str(str(getattr(report, "head_line")), str(getattr(report, "outcome")))
+    f.write(test_details)
+
+
 def pytest_addoption(parser):
     """ Sets up plugin option """
     # pylint: disable=protected-access
@@ -104,7 +112,9 @@ class focusingTerminalReporter(TerminalReporter):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
-            notify(str(getattr(report, "head_line")), str(getattr(report, "outcome")), str(getattr(report, "outcome")))
+            notify(str(getattr(report, "head_line")), str(getattr(report, "outcome")))
+            test_details = str((str(getattr(report, "head_line")), str(getattr(report, "outcome"))))
+            todo_list(test_details)
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
