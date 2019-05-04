@@ -45,7 +45,7 @@ def linux_notify(title, message):
     os.system("notify-send {} --urgency=critical".format(" ".join([title, message])))
 
 # The notifier function
-def notify(title, subtitle, message):
+def notify(title, message, subtitle="Test Case Failed."):
     """ Send a notification to the user's screen """
     if platform == "darwin":
         mac_notify(title, subtitle, message)
@@ -104,7 +104,7 @@ class focusingTerminalReporter(TerminalReporter):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
-            notify("Title", "Subtitle", "Message")
+            notify(str(getattr(report, "head_line")), str(getattr(report, "outcome")), str(getattr(report, "outcome")))
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
