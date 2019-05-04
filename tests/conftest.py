@@ -35,7 +35,7 @@ def notify(title, subtitle, message):
     elif platform in ("linux", "linux2"):
         print("Failures!")
     elif platform == "win32":
-        win_notify()
+        win_notify(title, message)
 
 def mac_notify(title, subtitle, message):
     t = "-title {!r}".format(title)
