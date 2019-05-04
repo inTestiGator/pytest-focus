@@ -16,6 +16,18 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "shafferz",
+      "name": "Zachary Shaffer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26298864?v=4",
+      "profile": "http://www.shafferz.com",
+      "contributions": [
+        "code",
+        "ideas",
+        "review",
+        "question"
+      ]
     }
   ],
   "contributorsPerLine": 7,
