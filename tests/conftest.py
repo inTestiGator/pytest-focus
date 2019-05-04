@@ -7,7 +7,7 @@ import pytest
 from _pytest.terminal import TerminalReporter
 
 
-# pylint: disable=import-error, unused-import
+# pylint: disable=unused-import
 if platform == "win32":
     from win10toast import ToastNotifier  # noqa: F401
 
