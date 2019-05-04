@@ -16,14 +16,6 @@ PRE_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, PRE_DIRECTORY + GO_BACK_A_DIRECTORY + GO_INTO_SRC_DIRECTORY)
 
 
-def pytest_addoption(parser):
-    """Parser adoption to allow plugin to be run with --focus flag."""
-    group = parser.getgroup("focus")
-    group.addoption(
-        "--focus", action="store_true", help="focus: type --focus after pytest"
-    )
-
-
 def mac_notify(title, subtitle, message):
     """ Handles Mac Notification """
     push_t = "-title {!r}".format(title)
