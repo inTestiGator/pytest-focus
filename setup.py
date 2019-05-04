@@ -35,6 +35,6 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
     ],
-    install_requires=['pytest'],
-    entry_points={'pytest11': ['focus = pytest_focus', ], },
+    install_requires=["pytest"],
+    entry_points={"pytest11": ["focus = pytest_focus"]},
 )
