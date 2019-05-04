@@ -28,18 +28,28 @@ os_name = "unknown"
 if platform in ("linux", "linux2"):
     os_name = "linux"  # linux
 elif platform == "darwin":
-    os_name = "Mac"  # OS X
+    os_name = "mac"  # OS X
 elif platform == "win32":
     os_name = "windows"  # Windows...
-print(os_name)
 
-def win_notify():
+def win_notify(title, message):
     toast = ToastNotifier()
-    toast.show_toast("TEST", "PYTHON")
+    toast.show_toast(title, message)
 
 # The notifier function
 def notify(title, subtitle, message):
     """ Send a notification to the user's screen """
+    title = "Failed Test Cases"
+    subtitle = "uh oh!"
+    message = "Check your terminal. You have 3 failed test cases!"
+    if os_name == "mac":
+        mac_notify(title, subtitle, message)
+    elif os_name == "linux":
+        print("Failures!")
+    elif os_name == "windows":
+        win_notify()
+
+def mac_notify(title, subtitle, message):
     t = "-title {!r}".format(title)
     s = "-subtitle {!r}".format(subtitle)
     m = "-message {!r}".format(message)
@@ -47,14 +57,6 @@ def notify(title, subtitle, message):
         'terminal-notifier {} -activate "com.apple.Terminal"'.format(
             " ".join([m, t, s])
         )
-    )
-
-
-def mac_notify():
-    notify(
-        "Failed Test Cases",
-        "uh oh!",
-        "Check your terminal. You have 3 failed test cases!",
     )
     sys.stdout.write("It appears you have failing test cases...\n")
 
