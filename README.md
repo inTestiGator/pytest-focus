@@ -12,6 +12,31 @@
 ![license-mit](https://img.shields.io/github/license/inTestiGator/pytest-focus.svg)
 
 Welcome to pytest-focus, a pytest plugin designed to make you focus as you write
+test cases until they pass. The way that it completes this task, is through the
+use of push notifications and a creation of a ToDo-list. As test cases fail,
+pytest-focus sends the user notifications in real time about tests that have failed.
+After all the tests have been checked, it creates a ToDo-list for the user to view
+in order to help people focus on immediate problems. This tool aims to help
+you stay on top of making all the test cases in your test suite pass by relaying
+which ones fail to pass as they are run and tested. Notifications will be sent detailing which test case failed when it happens. Currently supports Linux,
+MacOS, and Windows 10 operating systems.
+
+## Setup
+You can install this plugin from PYPI  and download dependencies by following
+the following commands:
+
+```
+pipenv install pytest-focus --dev
+pipenv install --dev
+```
+
+## Running pytest-focus
+
+In order to run pytest-focus, run the following command:
+
+```
+pipenv run pytest --focus
+```
 
 ## Checks
 
