@@ -42,6 +42,20 @@
         "review",
         "design"
       ]
+    },
+    {
+      "login": "Alex-Yarkosky",
+      "name": "Alexander Yarkosky",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/36210455?v=4",
+      "profile": "http://alexander.yarkosky.xyz",
+      "contributions": [
+        "code",
+        "content",
+        "doc",
+        "infra",
+        "review",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
