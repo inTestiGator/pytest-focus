@@ -14,6 +14,7 @@ pytest-xdist = "*"
 pathlib = "*"
 black = "*"
 pytest-cov = "*"
+codacy-coverage = "*"
 
 [packages]
 
