@@ -32,7 +32,8 @@ def mac_notify(title, subtitle, message):
 
 def win_notify(title, message):
     """ Handles windows notifications """
-    os.system("notify-send -i error {}".format(" ".join([title, message])))
+    toast = ToastNotifier()
+    toast.show_toast(title, message)
 
 
 def linux_notify(title, message):
