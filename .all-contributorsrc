@@ -56,6 +56,21 @@
         "test",
         "platform"
       ]
+    },
+    {
+      "login": "yeej2",
+      "name": "Joshua Yee",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/22895281?v=4",
+      "profile": "https://github.com/yeej2",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "review",
+        "test",
+        "platform",
+        "infra"
+      ]
     }
   ],
   "contributorsPerLine": 7,
