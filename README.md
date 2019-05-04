@@ -1,6 +1,6 @@
 # pytest-focus
 
-![pytest-focus](static/focus-logo.png "pytest-focus logo")
+![pytest-focus](static/focus-logo2.png "pytest-focus logo")
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 [![Build Status](https://api.travis-ci.com/inTestiGator/pytest-focus.svg?branch=master)](https://travis-ci.com/inTestiGator/pytest-focus)
