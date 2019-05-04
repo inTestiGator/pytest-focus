@@ -23,20 +23,6 @@ sys.path.insert(0, PRE_DIRECTORY + GO_BACK_A_DIRECTORY + GO_INTO_SRC_DIRECTORY)
 #         "--focus", action="store_true", help="focus: type --focus after pytest"
 #     )
 
-def win_notify(title, message):
-    toast = ToastNotifier()
-    toast.show_toast(title, message)
-
-# The notifier function
-def notify(title, subtitle, message):
-    """ Send a notification to the user's screen """
-    if platform == "darwin":
-        mac_notify(title, subtitle, message)
-    elif platform in ("linux", "linux2"):
-        print("Failures!")
-    elif platform == "win32":
-        win_notify(title, message)
-
 def mac_notify(title, subtitle, message):
     t = "-title {!r}".format(title)
     s = "-subtitle {!r}".format(subtitle)
@@ -47,6 +33,25 @@ def mac_notify(title, subtitle, message):
         )
     )
     sys.stdout.write("It appears you have failing test cases...\n")
+
+
+def win_notify(title, message):
+    toast = ToastNotifier()
+    toast.show_toast(title, message)
+
+
+def linux_notify(title, message):
+    os.system("notify-send {} --urgency=critical".format(" ".join([title, message])))
+
+# The notifier function
+def notify(title, subtitle, message):
+    """ Send a notification to the user's screen """
+    if platform == "darwin":
+        mac_notify(title, subtitle, message)
+    elif platform in ("linux", "linux2"):
+        print("Failures!")
+    elif platform == "win32":
+        win_notify(title, message)
 
 def pytest_addoption(parser):
     """ Sets up plugin option """
