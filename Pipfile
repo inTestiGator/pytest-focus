@@ -14,6 +14,7 @@ pytest-xdist = "*"
 pathlib = "*"
 black = "*"
 pytest-cov = "*"
+win10toast = "*"
 
 [packages]
 
