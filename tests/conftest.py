@@ -1,6 +1,8 @@
 """Configuration file for the test suite"""
 import os
 import sys
+import subprocess
+import webbrowser
 import pytest
 from _pytest.terminal import TerminalReporter
 from sys import platform
@@ -36,9 +38,9 @@ def mac_notify(title, subtitle, message):
     sys.stdout.write("It appears you have failing test cases...\n")
 
 
-def win_notify(title, message):
-    toast = ToastNotifier()
-    toast.show_toast(title, message)
+# def win_notify(title, message):
+#     toast = ToastNotifier()
+#     toast.show_toast(title, message)
 
 
 def linux_notify(title, message):
@@ -58,8 +60,8 @@ def notify(title, message, subtitle="Test Case Failed."):
 def todo_list(test_details):
     """ List of failed test cases in txt file """
     f= open("failed_tests.txt","w+")
-    # test_details = str(str(getattr(report, "head_line")), str(getattr(report, "outcome")))
     f.write(test_details)
+    webbrowser.open("failed_tests.txt")
 
 
 def pytest_addoption(parser):
