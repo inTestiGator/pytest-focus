@@ -5,7 +5,8 @@ from sys import platform
 import webbrowser
 import pytest
 from _pytest.terminal import TerminalReporter
-
+if platform == "win32":
+    from win10toast import ToastNotifier
 
 GO_BACK_A_DIRECTORY = "/../"
 GO_INTO_SRC_DIRECTORY = "src"
