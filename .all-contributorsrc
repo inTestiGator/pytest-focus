@@ -56,6 +56,20 @@
         "review",
         "design"
       ]
+    },
+    {
+      "login": "ilikerustoo",
+      "name": "Mohammad Khan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25516043?v=4",
+      "profile": "https://github.com/ilikerustoo",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "review",
+        "test",
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,
