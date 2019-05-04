@@ -1,4 +1,5 @@
 # pytest-focus
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 ![pytest-focus](static/focus-logo.png "pytest-focus logo")
 
@@ -47,3 +48,15 @@ The following checks are made on the project via these commands:
 Failure for these commands to pass will result in the build failing to pass
 `Travis CI`. Any build that does not pass this system will not be merged into
 the `master` branch.
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table><tr><td align="center"><a href="https://github.com/baldeosinghm"><img src="https://avatars0.githubusercontent.com/u/42876742?v=4" width="100px;" alt="Matthew Baldeosingh"/><br /><sub><b>Matthew Baldeosingh</b></sub></a><br /><a href="https://github.com/inTestiGator/pytest-focus/commits?author=baldeosinghm" title="Code">💻</a> <a href="https://github.com/inTestiGator/pytest-focus/commits?author=baldeosinghm" title="Documentation">📖</a> <a href="#ideas-baldeosinghm" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-baldeosinghm" title="Reviewed Pull Requests">👀</a><a href="#platform-baldeosinghm" title="Packaging/porting to new platform">📦</a></td><td align="center"><a href="http://www.shafferz.com"><img src="https://avatars1.githubusercontent.com/u/26298864?v=4" width="100px;" alt="Zachary Shaffer"/><br /><sub><b>Zachary Shaffer</b></sub></a><br /><a href="https://github.com/inTestiGator/pytest-focus/commits?author=shafferz" title="Code">💻</a> <a href="#ideas-shafferz" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-shafferz" title="Reviewed Pull Requests">👀</a> <a href="#question-shafferz" title="Answering Questions">💬</a></td><td align="center"><a href="http://alexander.yarkosky.xyz"><img src="https://avatars1.githubusercontent.com/u/36210455?v=4" width="100px;" alt="Alexander Yarkosky"/><br /><sub><b>Alexander Yarkosky</b></sub></a><br /><a href="https://github.com/inTestiGator/pytest-focus/commits?author=Alex-Yarkosky" title="Code">💻</a> <a href="#content-Alex-Yarkosky" title="Content">🖋</a> <a href="https://github.com/inTestiGator/pytest-focus/commits?author=Alex-Yarkosky" title="Documentation">📖</a> <a href="#infra-Alex-Yarkosky" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#review-Alex-Yarkosky" title="Reviewed Pull Requests">👀</a> <a href="#design-Alex-Yarkosky" title="Design">🎨</a></td><td align="center"><a href="https://github.com/ilikerustoo"><img src="https://avatars3.githubusercontent.com/u/25516043?v=4" width="100px;" alt="Mohammad Khan"/><br /><sub><b>Mohammad Khan</b></sub></a><br /><a href="https://github.com/inTestiGator/pytest-focus/commits?author=ilikerustoo" title="Code">💻</a> <a href="https://github.com/inTestiGator/pytest-focus/commits?author=ilikerustoo" title="Documentation">📖</a> <a href="#ideas-ilikerustoo" title="Ideas, Planning, & Feedback">🤔</a> <a href="#review-ilikerustoo" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/inTestiGator/pytest-focus/commits?author=ilikerustoo" title="Tests">⚠️</a> <a href="#platform-ilikerustoo" title="Packaging/porting to new platform">📦</a></td></tr></table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
