@@ -3,6 +3,9 @@ import os
 import sys
 import pytest
 from _pytest.terminal import TerminalReporter
+from sys import platform
+from win10toast import ToastNotifier
+
 
 GO_BACK_A_DIRECTORY = "/../"
 GO_INTO_SRC_DIRECTORY = "src"
@@ -20,6 +23,20 @@ sys.path.insert(0, PRE_DIRECTORY + GO_BACK_A_DIRECTORY + GO_INTO_SRC_DIRECTORY)
 #         "--focus", action="store_true", help="focus: type --focus after pytest"
 #     )
 
+os_name = "unknown"
+
+if platform in ("linux", "linux2"):
+    os_name = "linux"  # linux
+elif platform == "darwin":
+    os_name = "Mac"  # OS X
+elif platform == "win32":
+    os_name = "windows"  # Windows...
+print(os_name)
+
+def win_notify():
+    toast = ToastNotifier()
+    toast.show_toast("TEST", "PYTHON")
+
 # The notifier function
 def notify(title, subtitle, message):
     """ Send a notification to the user's screen """
@@ -33,11 +50,11 @@ def notify(title, subtitle, message):
     )
 
 
-def mac_notify(fail):
+def mac_notify():
     notify(
         "Failed Test Cases",
         "uh oh!",
-        "Check your terminal. You have", fail, "failed test cases!",
+        "Check your terminal. You have 3 failed test cases!",
     )
     sys.stdout.write("It appears you have failing test cases...\n")
 
@@ -91,8 +108,7 @@ class focusingTerminalReporter(TerminalReporter):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
-            fail +=1
-            mac_notify(fail)
+            mac_notify()
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
