@@ -110,7 +110,8 @@ class focusingTerminalReporter(TerminalReporter):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
-            mac_notify()
+            mac_notify(report)
+            win_notify()
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
