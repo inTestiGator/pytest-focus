@@ -5,7 +5,7 @@ import sys
 
 GO_BACK_A_DIRECTORY = "/../"
 GO_INTO_SRC_DIRECTORY = "src"
-pytest_plugins = 'pytest_focus'
+pytest_plugins = "pytest_focus"
 
 # set the system path to contain the previous directory
 PRE_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
