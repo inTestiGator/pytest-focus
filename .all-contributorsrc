@@ -28,6 +28,20 @@
         "review",
         "question"
       ]
+    },
+    {
+      "login": "Alex",
+      "name": "Alex Gaynor",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/772?v=4",
+      "profile": "https://alexgaynor.net",
+      "contributions": [
+        "code",
+        "content",
+        "doc",
+        "infra",
+        "review",
+        "design"
+      ]
     }
   ],
   "contributorsPerLine": 7,
