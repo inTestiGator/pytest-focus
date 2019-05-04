@@ -51,3 +51,4 @@ script:
 # report coverage information to CodeCov
 after_success:
   - pipenv run codecov
+  - pipenv run python-codacy-coverage -r coverage.xml
