@@ -42,14 +42,13 @@ def mac_notify(title, subtitle, message):
     sys.stdout.write("It appears you have failing test cases...\n")
 
 
-# def win_notify(title, message):
-#     toast = ToastNotifier()
-#     toast.show_toast(title, message)
+def win_notify(title, message):
+    os.system("notify-send -i error {}".format(" ".join([title, message])))
 
 
 def linux_notify(title, message):
     """ Handles linux notifications """
-    os.system("notify-send {} --urgency=critical".format(" ".join([title, message])))
+    os.system("notify-send {} -u critical".format(" ".join([title, message])))
 
 
 # The notifier function
@@ -59,6 +58,8 @@ def notify(title, message, subtitle="Test Case Failed."):
         mac_notify(title, subtitle, message)
     elif platform in ("linux", "linux2"):
         linux_notify(title, message)
+    elif platform == "win32":
+        win_notify(title, message)
 
 
 def todo_list(test_details):
