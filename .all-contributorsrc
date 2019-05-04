@@ -16,6 +16,46 @@
         "ideas",
         "review"
       ]
+    },
+    {
+      "login": "shafferz",
+      "name": "Zachary Shaffer",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/26298864?v=4",
+      "profile": "http://www.shafferz.com",
+      "contributions": [
+        "code",
+        "ideas",
+        "review",
+        "question"
+      ]
+    },
+    {
+      "login": "Alex-Yarkosky",
+      "name": "Alexander Yarkosky",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/36210455?v=4",
+      "profile": "http://alexander.yarkosky.xyz",
+      "contributions": [
+        "code",
+        "content",
+        "doc",
+        "infra",
+        "review",
+        "design"
+      ]
+    },
+    {
+      "login": "ilikerustoo",
+      "name": "Mohammad Khan",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/25516043?v=4",
+      "profile": "https://github.com/ilikerustoo",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "review",
+        "test",
+        "platform"
+      ]
     }
   ],
   "contributorsPerLine": 7,

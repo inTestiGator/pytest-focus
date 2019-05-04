@@ -7,7 +7,7 @@ from sys import platform
 import pytest
 import os
 from _pytest.terminal import TerminalReporter
-
+from mac-notifications import mac_notify
 
 def pytest_addoption(parser):
     """ Sets up plugin option """
@@ -76,6 +76,7 @@ class focusingTerminalReporter(TerminalReporter):
 
     def print_failure(self, report):
         """ sends push notifications as test cases fail """
+        mac-notifications.mac_notify()
         if self.config.option.tbstyle != "no":
             if self.config.option.tbstyle == "line":
                 line = self._getcrashline(report)
