@@ -33,9 +33,9 @@ elif platform == "win32":
     os_name = "windows"  # Windows...
 print(os_name)
 
-def win_notify():
+def win_notify(report):
     toast = ToastNotifier()
-    toast.show_toast("TEST", "PYTHON")
+    toast.show_toast("TEST CASE FAILED", report)
 
 # The notifier function
 def notify(title, subtitle, message):
@@ -108,7 +108,7 @@ class focusingTerminalReporter(TerminalReporter):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
-            mac_notify()
+            mac_notify(report)
             win_notify()
             if self.verbosity <= 0:
                 self._tw.line()
