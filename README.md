@@ -1,6 +1,4 @@
 # pytest-focus
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5522e362cd8486d9df3819918285163)](https://app.codacy.com/app/Alex-Yarkosky/pytest-focus?utm_source=github.com&utm_medium=referral&utm_content=inTestiGator/pytest-focus&utm_campaign=Badge_Grade_Dashboard)
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
 ![pytest-focus](static/focus-logo.png "pytest-focus logo")
 
@@ -11,6 +9,7 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-orange.svg)](https://www.python.org/)
 [![code-style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 ![license-mit](https://img.shields.io/github/license/inTestiGator/pytest-focus.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5522e362cd8486d9df3819918285163)](https://app.codacy.com/app/Alex-Yarkosky/pytest-focus?utm_source=github.com&utm_medium=referral&utm_content=inTestiGator/pytest-focus&utm_campaign=Badge_Grade_Dashboard)
 
 Welcome to pytest-focus, a pytest plugin designed to make you focus as you write
 test cases until they pass. The way that it completes this task, is through the
