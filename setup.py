@@ -1,36 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-"""
-Set up framework for plugin
-"""
+""" Setup for pytest-focus plugin. """
 
 import os
 import codecs
 from setuptools import setup
 
-
-def read(fname):
-    """
-    Read the filepath to run the code
-    """
-    file_path = os.path.join(os.path.dirname(__file__), fname)
-    return codecs.open(file_path, encoding="utf-8").read()
-
-
 setup(
-    name="pytest-focus",
-    version="0.1.0",
-    author="Matthew Baldeosingh, et al.",
-    author_email="baldeosinghm@allegheny.edu",
-    maintainer="Matthew Baldeosingh",
-    maintainer_email="baldeosinghm@allegheny.edu",
-    license="MIT",
-    url="https://github.com/baldeosinghm/pytest-focus",
-    description="A simple plugin that helps students focus",
-    long_description=read("README.rst"),
-    py_modules=["pytest_focus"],
+    name='pytest-focus',
+    version='0.1.1',
+    description='A pytest plugin that alerts user of failed test cases with screen notifications',
+    url='https://github.com/inTestiGator/pytest-focus',
+    author='Matthew Baldeosingh, et al.',
+    author_email='baldeosinghm@allegheny.edu',
+    license='MIT',
+    # long_description=read("README.md"),
+    py_modules=['pytest_focus'],
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
-    install_requires=["pytest>=3.5.0"],
+    # install_requires=["pytest>=3.5.0"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Pytest",
@@ -49,5 +36,6 @@ setup(
         "Operating System :: OS Independent",
         "License :: OSI Approved :: MIT License",
     ],
-    entry_points={"pytest11": ["focus = pytest_focus"]},
+    install_requires=['pytest'],
+    entry_points={'pytest11': ['focus = pytest_focus', ], },
 )
