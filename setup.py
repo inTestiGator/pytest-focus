@@ -2,13 +2,12 @@
 # -*- coding: utf-8 -*-
 """ Setup for pytest-focus plugin. """
 
-
 from setuptools import setup
 
 setup(
     name="pytest-focus",
     version="0.1.1",
-    description="A plugin that alerts users of failed test cases with notifications",
+    description="A plugin alerting users of failed test cases with notifications",
     url="https://github.com/inTestiGator/pytest-focus",
     author="Matthew Baldeosingh, et al.",
     author_email="baldeosinghm@allegheny.edu",
