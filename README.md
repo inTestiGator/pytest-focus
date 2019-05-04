@@ -34,9 +34,7 @@ pipenv install --dev
 
 In order to run pytest-focus, run the following command:
 
-```
-pipenv run pytest --focus
-```
+`pipenv run pytest --focus`
 
 ## Checks
 
