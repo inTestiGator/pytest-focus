@@ -1,13 +1,13 @@
 """Configuration file for the test suite"""
 import os
 import sys
-import subprocess
+from sys import platform
 import webbrowser
 import pytest
 from _pytest.terminal import TerminalReporter
-from sys import platform
 
-# pylint: disable=import-error
+
+# pylint: disable=import-error, unused-import
 if platform == "win32":
     from win10toast import ToastNotifier
 
@@ -57,12 +57,13 @@ def notify(title, message, subtitle="Test Case Failed."):
     """ Send a notification to the user's screen """
     if platform == "darwin":
         mac_notify(title, subtitle, message)
-    else platform in ("linux", "linux2"):
+    elif platform in ("linux", "linux2"):
         linux_notify(title, message)
 
 
 def todo_list(test_details):
     """ List of failed test cases in txt file """
+    # pylint: disable=invalid-name
     f = open("failed_tests.txt", "w+")
     f.write(test_details)
     webbrowser.open("failed_tests.txt")
@@ -90,14 +91,14 @@ def pytest_configure(config):
         return
     if config.option.focus and config.pluginmanager.hasplugin("terminalreporter"):
         standard_reporter = config.pluginmanager.getplugin("terminalreporter")
-        focus_reporter = focusingTerminalReporter(standard_reporter)
+        focus_reporter = FocusingTerminalReporter(standard_reporter)
 
         config.pluginmanager.unregister(standard_reporter)
         config.pluginmanager.register(focus_reporter, "terminalreporter")
         # mac_notify()
 
 
-class focusingTerminalReporter(TerminalReporter):
+class FocusingTerminalReporter(TerminalReporter):
     """ Reports failing test cases as they fail """
 
     def __init__(self, reporter):
