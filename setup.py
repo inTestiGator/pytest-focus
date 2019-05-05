@@ -9,13 +9,13 @@ setup(
     version="0.1.1",
     description="A plugin alerting users of failed test cases with notifications",
     url="https://github.com/inTestiGator/pytest-focus",
-    author="Matthew Baldeosingh, et al.",
-    author_email="baldeosinghm@allegheny.edu",
+    # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
+    author="Matthew Baldeosingh, Josh Yee, Alex Yarkosky, Zachary Shaffer, Mohammad Kahn",
+    # pylint: disable=locally-disabled, multiple-statements, fixme, line-too-long
+    author_email="baldeosinghm@allegheny.edu, yeej2@allegheny.edu, yarkoskya@allegheny.edu, shafferz@allegheny.edu, kahnm@allegheny.edu",
     license="MIT",
-    # long_description=read("README.md"),
     py_modules=["pytest_focus"],
     python_requires=">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*",
-    # install_requires=["pytest>=3.5.0"],
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Pytest",
