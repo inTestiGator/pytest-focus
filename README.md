@@ -21,11 +21,9 @@ MacOS, and Windows 10 operating systems.
 
 ## What is pytest-focus
 The way that pytest-focus completes its task, is through the
-use of push notifications and a creation of a ToDo-list. As test cases fail,
+use of push notifications. As test cases fail,
 pytest-focus sends the user notifications in real time about tests that have failed.
-After all the tests have been checked, it creates a ToDo-list for the user to view
-in order to help people focus on immediate problems.
-Notifications will be sent detailing which test case failed when it happens.
+Notifications will be sent detailing which test cases fail as they fail.
 
 ## Windows Users
 
@@ -33,7 +31,7 @@ If you use Windows, you need to run the command:
 
 `pip install win10toast`
 
-This will allow the push notifications to interact with the computers.
+This will enable the push notifications on Windows computers.
 
 ## Mac Users
 
@@ -41,13 +39,13 @@ If you use a Mac, you need to run the command:
 
 `brew install terminal-notifier`
 
-Otherwise, if you choose to install via RubyGems, run the command:
+Alternatively, if you choose to install via RubyGems, run the command:
 
 `[sudo] gem install terminal-notifier`
 
 ## Setup
 
-You can install this plugin from PYPI  and download dependencies by following
+You can install this plugin from PYPI and download dependencies using
 the following commands:
 
 ```
@@ -63,32 +61,32 @@ In order to run pytest-focus, run the following command:
 
 ## Checks
 
-The following checks are made on the project via these commands:
+The following are checks made on the project via these commands:
 
 `pipenv run pytest tests --cov-config pytest.cov --cov`
 
   * The command above checks that the pytest test suite works and that the code
-    coverage is not lowered when new additions are added
+    coverage is not lowered when new additions are added.
 
 `pipenv run black **/*.py --check`
 
   * The command above checks that all `.py` python code adheres to the black
-    code style
+    code style.
 
 `pipenv run flake8 **/*.py`
 
   * The command above checks that all `.py` python code adheres to the standards
-    of `flake8`
+    of `flake8`.
 
 `pipenv run pylint **/*.py`
 
   * The command above checks that all `.py` python code adheres to the standards
-    of `pylint` and gets rated "10/10"
+    of `pylint` and gets rated "10/10".
 
 `mdl README.md`
 
   * The command above checks that the `README.md` adheres to the markdown
-    language and its syntax
+    language and its syntax.
 
 Failure for these commands to pass will result in the build failing to pass
 `Travis CI`. Any build that does not pass this system will not be merged into
