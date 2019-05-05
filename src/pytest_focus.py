@@ -12,6 +12,7 @@ from _pytest.terminal import TerminalReporter
 if platform == "win32":
     from win10toast import ToastNotifier
 
+test_list[]
 
 def mac_notify(title, subtitle, message):
     """ Handles Mac Notification """
@@ -109,10 +110,11 @@ class FocusingTerminalReporter(TerminalReporter):
             test_details = str(
                 (str(getattr(report, "head_line")), str(getattr(report, "outcome")))
             )
-            todo_list(test_details)
+            test_list.append(test_details)
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
+        todo_list(test_list)
 
     def print_failure(self, report):
         """ sends push notifications as test cases fail """
