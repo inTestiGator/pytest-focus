@@ -12,7 +12,7 @@
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5522e362cd8486d9df3819918285163)](https://app.codacy.com/app/Alex-Yarkosky/pytest-focus?utm_source=github.com&utm_medium=referral&utm_content=inTestiGator/pytest-focus&utm_campaign=Badge_Grade_Dashboard)
 
 Welcome to pytest-focus, a pytest plugin designed to make you focus as you write
-test cases until they pass. . This tool aims to help
+test cases until they pass. This tool aims to help
 you stay on top of making all the test cases in your test suite pass by relaying
 which ones fail to pass as they are run and tested. Currently supports Linux,
 MacOS, and Windows 10 operating systems.
