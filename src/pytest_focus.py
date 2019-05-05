@@ -5,7 +5,6 @@ Plug in for pytest that sends push notifications for failed tests
 import os
 import sys
 from sys import platform
-import webbrowser
 import pytest
 from _pytest.terminal import TerminalReporter
 
@@ -46,14 +45,6 @@ def notify(title, message, subtitle="Test Case Failed."):
         linux_notify(title, message)
     elif platform == "win32":
         win_notify(title, message)
-
-
-def todo_list(test_details):
-    """ List of failed test cases in txt file """
-    # pylint: disable=invalid-name
-    f = open("failed_tests.txt", "w+")
-    f.write(test_details)
-    webbrowser.open("failed_tests.txt")
 
 
 def pytest_addoption(parser):
@@ -105,11 +96,6 @@ class FocusingTerminalReporter(TerminalReporter):
         """ Shows failures and errors as tests are running """
         TerminalReporter.pytest_runtest_logreport(self, report)
         if report.failed and not hasattr(report, "wasxfail"):
-            notify(str(getattr(report, "head_line")), str(getattr(report, "outcome")))
-            test_details = str(
-                (str(getattr(report, "head_line")), str(getattr(report, "outcome")))
-            )
-            todo_list(test_details)
             if self.verbosity <= 0:
                 self._tw.line()
             self.print_failure(report)
