@@ -1,8 +1,6 @@
 # pytest-focus
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5522e362cd8486d9df3819918285163)](https://app.codacy.com/app/Alex-Yarkosky/pytest-focus?utm_source=github.com&utm_medium=referral&utm_content=inTestiGator/pytest-focus&utm_campaign=Badge_Grade_Dashboard)
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 
-![pytest-focus](static/focus-logo.png "pytest-focus logo")
+![pytest-focus](static/focus-logo2.png "pytest-focus logo")
 
 [![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors)
 [![Build Status](https://api.travis-ci.com/inTestiGator/pytest-focus.svg?branch=master)](https://travis-ci.com/inTestiGator/pytest-focus)
@@ -11,13 +9,55 @@
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-orange.svg)](https://www.python.org/)
 [![code-style](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/ambv/black)
 ![license-mit](https://img.shields.io/github/license/inTestiGator/pytest-focus.svg)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/a5522e362cd8486d9df3819918285163)](https://app.codacy.com/app/Alex-Yarkosky/pytest-focus?utm_source=github.com&utm_medium=referral&utm_content=inTestiGator/pytest-focus&utm_campaign=Badge_Grade_Dashboard)
 
 Welcome to pytest-focus, a pytest plugin designed to make you focus as you write
-test cases until they pass. This tool aims to help you stay on top of making all
-the test cases in your test suite pass by relaying which ones fail to pass as
-they are run and tested. Notifications will be sent detailing which test case
-failed when it happens. Currently supports Linux, MacOS, and Windows 10
-operating systems.
+test cases until they pass. . This tool aims to help
+you stay on top of making all the test cases in your test suite pass by relaying
+which ones fail to pass as they are run and tested. Currently supports Linux,
+MacOS, and Windows 10 operating systems.
+
+## What is pytest-focus
+The way that pytest-focus completes its task, is through the
+use of push notifications and a creation of a ToDo-list. As test cases fail,
+pytest-focus sends the user notifications in real time about tests that have failed.
+After all the tests have been checked, it creates a ToDo-list for the user to view
+in order to help people focus on immediate problems.
+Notifications will be sent detailing which test case failed when it happens.
+
+## Windows Users
+
+If you use Windows, you need to run the command:
+
+`pip install win10toast`
+
+This will allow the push notifications to interact with the computers.
+
+## Mac Users
+
+If you use a Mac, you need to run the command:
+
+`brew install terminal-notifier`
+
+Otherwise, if you choose to install via RubyGems, run the command:
+
+`[sudo] gem install terminal-notifier`
+
+## Setup
+
+You can install this plugin from PYPI  and download dependencies by following
+the following commands:
+
+```
+pipenv install pytest-focus --dev
+pipenv install --dev
+```
+
+## Running pytest-focus
+
+In order to run pytest-focus, run the following command:
+
+`pipenv run pytest --focus`
 
 ## Checks
 
@@ -25,27 +65,27 @@ The following checks are made on the project via these commands:
 
 `pipenv run pytest tests --cov-config pytest.cov --cov`
 
-* The command above checks that the pytest test suite works and that the code
+  * The command above checks that the pytest test suite works and that the code
     coverage is not lowered when new additions are added
 
 `pipenv run black **/*.py --check`
 
-* The command above checks that all `.py` python code adheres to the black
-  code style
+  * The command above checks that all `.py` python code adheres to the black
+    code style
 
 `pipenv run flake8 **/*.py`
 
-* The command above checks that all `.py` python code adheres to the standards
+  * The command above checks that all `.py` python code adheres to the standards
     of `flake8`
 
 `pipenv run pylint **/*.py`
 
-* The command above checks that all `.py` python code adheres to the standards
+  * The command above checks that all `.py` python code adheres to the standards
     of `pylint` and gets rated "10/10"
 
 `mdl README.md`
 
-* The command above checks that the `README.md` adheres to the markdown
+  * The command above checks that the `README.md` adheres to the markdown
     language and its syntax
 
 Failure for these commands to pass will result in the build failing to pass
